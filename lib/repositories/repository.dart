@@ -10,7 +10,7 @@ class Repository {
 
     final cep = jsonDecode(cepResponse.body);
 
-    final myCep = BuscarCep.fromJson(cep);
+    final myCep = BuscarCep.fromMap(cep);
 
     return myCep;
   }

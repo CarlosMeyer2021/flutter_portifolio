@@ -50,7 +50,8 @@ class BuscarCep {
    @override
   String toString() {
     
-    return ('BuscarCep: $cep');
+    return 'BuscarCep(cep: $cep, logradouro: $logradouro, complemento: $complemento, bairro: $bairro, localidade: $localidade, uf: $uf, ddd: $ddd)';
+
   }
 
 }

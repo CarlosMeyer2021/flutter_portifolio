@@ -14,7 +14,7 @@ class _ViacepPageState extends State<ViacepPage> {
 
   Future<BuscarCep> pegaDados() async {
     final cep = await cepRepository.buscarMyCep();
-    print('Teste Cep: $cep');
+    //print('Teste Cep: $cep');
     return cep;
   }
 
@@ -31,12 +31,13 @@ class _ViacepPageState extends State<ViacepPage> {
   @override
   void initState() {
     //WidgetsBinding.instance.addPostFrameCallback((timestamp) async => dados = await pegaDados());
-    setState(() {
-      Future.delayed(
-        Duration.zero,
-        () async => dados = await pegaDados(),
-      );
-    });
+    
+      WidgetsBinding.instance.addPostFrameCallback((timestamp) async => dados = await pegaDados());
+      // Future.delayed(
+      //   Duration.zero,
+      //   () async => dados = await pegaDados(),
+      // );
+   
     super.initState();
   }
 
@@ -61,13 +62,11 @@ class _ViacepPageState extends State<ViacepPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('CEP: ${dados.cep}'),
-
-              // Text(dados.logradouro),
-              // Text(dados.complemento),
-              // Text(dados.bairro),
-              // Text(dados.localidade),
-              // Text(dados.uf),
-              // Text(dados.ddd),
+              Text('LOGRADOURO: ${dados.logradouro}'),
+              Text('COMPLEMENTO: ${dados.complemento}'),
+              Text('BAIRRO: ${dados.bairro}'),
+              Text('LOCALIDADE: ${dados.localidade}'),
+              Text('DDD: ${dados.ddd}'),
             ],
           ),
         ),
