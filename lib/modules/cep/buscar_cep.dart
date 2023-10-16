@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+
 class BuscarCep {
   String cep;
   String logradouro;
@@ -18,6 +19,11 @@ class BuscarCep {
     required this.uf,
     required this.ddd,
   });
+
+
+
+
+
 
   Map<String, dynamic> toMap() {
     return {
