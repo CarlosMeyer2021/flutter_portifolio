@@ -12,13 +12,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'APP',
-      routes: {
-        '/': (_) => const SplashPage(),
-        '/viacep': (_) => const ViacepPage(),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
       },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'APP',
+        routes: {
+          '/': (_) => const SplashPage(),
+          '/viacep': (_) => const ViacepPage(),
+        },
+      ),
     );
   }
 }
