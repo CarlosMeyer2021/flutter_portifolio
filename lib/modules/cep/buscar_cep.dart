@@ -33,15 +33,18 @@ class BuscarCep {
 
   String toJson() => jsonEncode(toMap());
 
+
+  
+
   factory BuscarCep.fromMap(Map<String, dynamic> map) {
     return BuscarCep(
-      cep: map['cep'],
-      logradouro: map['logradouro'],
-      complemento: map['complemento'],
-      bairro: map['bairro'],
-      localidade: map['localidade'],
-      uf: map['uf'],
-      ddd: map['ddd'],
+      cep: map['cep'] ?? '',
+      logradouro: map['logradouro'] ?? '',
+      complemento: map['complemento'] ?? '',
+      bairro: map['bairro'] ?? '',
+      localidade: map['localidade'] ?? '',
+      uf: map['uf'] ?? '',
+      ddd: map['ddd'] ?? '',
     );
   }
 

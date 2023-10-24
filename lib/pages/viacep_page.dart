@@ -70,6 +70,7 @@ class _ViacepPageState extends State<ViacepPage> {
                         return const CircularProgressIndicator.adaptive();
                       case ConnectionState.active:
                       case ConnectionState.done:
+                      
                         if (!futureDadosCep.hasData) {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
