@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-class BuscarCep {
+class ModelBuscarCep {
   String cep;
   String logradouro;
   String complemento;
@@ -9,7 +9,7 @@ class BuscarCep {
   String uf;
   String ddd;
 
-  BuscarCep({
+  ModelBuscarCep({
     required this.cep,
     required this.logradouro,
     required this.complemento,
@@ -36,8 +36,8 @@ class BuscarCep {
 
   
 
-  factory BuscarCep.fromMap(Map<String, dynamic> map) {
-    return BuscarCep(
+  factory ModelBuscarCep.fromMap(Map<String, dynamic> map) {
+    return ModelBuscarCep(
       cep: map['cep'] ?? '',
       logradouro: map['logradouro'] ?? '',
       complemento: map['complemento'] ?? '',
@@ -48,8 +48,8 @@ class BuscarCep {
     );
   }
 
-  factory BuscarCep.fromJson(String json) =>
-      BuscarCep.fromMap(jsonDecode(json));
+  factory ModelBuscarCep.fromJson(String json) =>
+      ModelBuscarCep.fromMap(jsonDecode(json));
 
   @override
   String toString() {

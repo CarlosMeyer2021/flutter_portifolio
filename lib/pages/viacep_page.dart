@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_portifolio/Exception/cep_not_found_exception.dart';
 import 'package:flutter_portifolio/modules/cep/buscar_cep.dart';
-import 'package:flutter_portifolio/repositories/repository.dart';
+import 'package:flutter_portifolio/repositories/cep_repository.dart';
 
 class ViacepPage extends StatefulWidget {
   const ViacepPage({super.key});
@@ -11,7 +12,8 @@ class ViacepPage extends StatefulWidget {
 }
 
 class _ViacepPageState extends State<ViacepPage> {
-  final cepRepository = Repository();
+  final cepRepository = CepRepository();
+  final cepNotFoundException = CepNotFoundException(cause: 'Testesssss');
   // String? nome;
 
   
@@ -70,8 +72,8 @@ class _ViacepPageState extends State<ViacepPage> {
                         return const CircularProgressIndicator.adaptive();
                       case ConnectionState.active:
                       case ConnectionState.done:
-                      
-                        if (!futureDadosCep.hasData) {
+
+                        if (!futureDadosCep.hasData) {    
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -94,6 +96,7 @@ class _ViacepPageState extends State<ViacepPage> {
                                       size: 60,
                                       color: Colors.red,
                                     ),
+                                    
                                     Text(
                                       'Ops\n Verifique ser o campo esta vazio \n ou ser o Cep é válido.',
                                       style: TextStyle(
@@ -112,7 +115,7 @@ class _ViacepPageState extends State<ViacepPage> {
                             color: Colors.red,
                             child: const Text('ERRO AO RECUPERAR CEP'),
                           );
-                        } //
+                        } 
                         final dadosCep = futureDadosCep.data;
 
                         // if(dadosCep == null){

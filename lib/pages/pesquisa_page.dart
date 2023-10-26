@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+class PesquisaPage extends StatefulWidget {
+  const PesquisaPage({super.key});
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<PesquisaPage> createState() => _PesquisaPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _PesquisaPageState extends State<PesquisaPage> {
   final cepEC = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   //if
@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Splash'),
+        title: const Text('PESQUISA CEP'),
       ),
       body: Container(
         decoration: BoxDecoration(

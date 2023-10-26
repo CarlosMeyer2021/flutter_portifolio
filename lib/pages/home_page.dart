@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portifolio/pages/splash_page.dart';
+import 'package:flutter_portifolio/pages/dashboard_page.dart';
 import 'package:flutter_portifolio/pages/viacep_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         debugShowCheckedModeBanner: false,
         title: 'APP',
         routes: {
-          '/': (_) => const SplashPage(),
+          '/': (_) => const DashboardPage(),
           '/viacep': (_) => const ViacepPage(),
         },
       ),
